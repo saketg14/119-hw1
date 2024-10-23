@@ -35,6 +35,10 @@ run the following:
 Then read the output of `output/test-output.txt`,
 convert it to an integer and return it. You should get "12345".
 
+Note:
+Running this question will leave an extra repo 119-hw1 lying around in your repository.
+We recommend adding this to your .gitignore file so it does not
+get uploaded when you submit.
 """
 
 # You may need to conda install requests or pip3 install requests
@@ -148,8 +152,7 @@ in their day-to-day jobs?
 
 === END OF Q4 ANSWER ===
 
-5. Extra credit
-
+5.
 Copy your setup_for_new_machine() function from Q3
 (remove the other code in this file)
 to a new script and run it on a friend's machine who
@@ -158,6 +161,9 @@ is not in this class. Did it work? What problems did you run into?
 Only answer this if you actually did the above.
 Paste the output you got when running the script on the
 new machine:
+
+If you don't have a friend's machine, please speculate about
+what might happen if you tried. You can guess.
 
 === ANSWER Q5 BELOW ===
 

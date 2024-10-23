@@ -34,9 +34,9 @@ Fill in the add_pipeline, eval_throughput, and generate_plot functions below.
 """
 
 # Number of times to run each pipeline in the following results.
-# You may modify this if any of your tests are running particularly slow
-# or fast (though it should be at least 10).
-NUM_RUNS = 1000
+# You may modify this as you go through the file if you like, but make sure
+# you set it back to 10 at the end before you submit.
+NUM_RUNS = 10
 
 class ThroughputHelper:
     def __init__(self):
@@ -236,7 +236,7 @@ of the pipeline in part 1.
 
 # You will need these:
 # part1.load_input
-# part1.PART1_PIPELINE
+# part1.PART_1_PIPELINE
 
 def q5a():
     # Return the throughput of the pipeline in part 1.
@@ -365,7 +365,7 @@ Create four pipelines,
     baseline_latency
 
 based on the three datasets above.
-Each should call your population_pipeline from Q7.
+Each should call your population_pipeline from Q6.
 """
 
 def baseline_small():
@@ -470,8 +470,8 @@ which uses a for loop to calculate the same statistics.
 Create a new pipeline:
 - Iterate through the dataframe entries. You can assume they are sorted.
 - Manually compute the minimum and maximum year for each country.
-- Add all of these to a Python list. Then manually compute the summary
-  statistics for the list (min, median, max, mean, and standard deviation).
+- Compute the same answers as in Q6.
+- Manually compute the summary statistics for the resulting list (min, median, max, mean, and standard deviation).
 """
 
 def for_loop_pipeline(df):

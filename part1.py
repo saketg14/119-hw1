@@ -251,14 +251,14 @@ We can do this in two different ways.
 a. Use .info() to see the number of non-null values in each column
 displayed in the console.
 
-b. Write a version using .count() to return the number of
-non-null values in each column as a dictionary.
+b. Write a version using .count() to calculate the number of
+non-null values in each column.
 
 In both 5a and 5b: return as your answer
 *for the 2021 data only*
 as a list of the number of non-null values in each column.
 
-Example: if there are 5 null values in the first column, 3 in the second, 4 in the third, and so on, you would return
+Example: if there are 5 non-null values in the first column, 3 in the second, 4 in the third, and so on, you would return
     [5, 3, 4, ...]
 """
 
