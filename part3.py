@@ -210,6 +210,16 @@ Hints:
         to count the number of lines in the output
 
    (shell command that spits output) | wc -l
+
+NOTE:
+The shell commands above require that population.csv
+has a newline at the end of the file.
+Otherwise, it will give an off-by-one error
+FYI, if this were not the case you can replace
+    cat filename
+with:
+    (cat filename ; echo)
+.
 """
 
 def pipeline_shell():
@@ -239,19 +249,24 @@ from part 2 to get answers for both pipelines.
 """
 
 def q7():
-    # Return a tuple of two floats
-    # throughput for shell, throughput for pandas
+    # Return a list of two floats
+    # [throughput for shell, throughput for pandas]
     # (in rows per second)
     # TODO
     raise NotImplementedError
 
 """
 8. Latency
+
+For latency, remember that we should create a version of the
+pipeline that processes only a single row! (As in Part 2).
+However, for this question only, it is OK if you choose to run
+latency on the entire pipeline instead.
 """
 
 def q8():
-    # Return a tuple of two floats
-    # latency for shell, latency for pandas
+    # Return a list of two floats
+    # [latency for shell, latency for pandas]
     # (in milliseconds)
     # TODO
     raise NotImplementedError

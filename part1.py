@@ -600,19 +600,20 @@ Pandas auto-assigned the column names. Let's change them.
 For the columns representing scores, rename them such that they describe the data that the column holds.
 
 You should be able to modify the column names directly in the dataframe.
-As your answer, return the new column names.
+As your answer, return the new column names as a list.
 """
 
 def q16(top_10):
     # Enter code here
     # TODO
     raise NotImplementedError
+    # return list(df.columns)
 
 """
 17a.
 Draw a suitable plot to show how the overall scores of the Top 10 universities varied over the three years. Clearly label your graph and attach a legend. Explain why you chose the particular plot.
 
-Save your plot in output/16.png.
+Save your plot in output/17a.png.
 
 As the answer to this part, return the name of the plot you saved.
 
@@ -700,7 +701,8 @@ As an extra challenge to make it more interesting, you can try to come up with
 a scoring function that is subtle!
 
 b.
-Use your new column to sort the data by the new values and return the top 10 universities.
+Use your new column to sort the data by the new values and return the top 10 university names as a list.
+
 """
 
 def q20a(dfs):
@@ -711,7 +713,7 @@ def q20a(dfs):
 def q20b(dfs):
     # TODO
     raise NotImplementedError
-    # For your answer, return the top 10 universities.
+    # For your answer, return the top 10 university names as a list.
 
 """
 21. Exploring data manipulation and falsification, continued
@@ -726,7 +728,7 @@ For this part, you will also need to load in the new data
 as part of the function.
 The function does not take an input; you should get it from the file.
 
-Return the top 10 universities from the falsified data.
+Return the top 10 university names as a list from the falsified data.
 """
 
 def q21():

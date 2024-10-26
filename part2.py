@@ -366,6 +366,12 @@ Create four pipelines,
 
 based on the three datasets above.
 Each should call your population_pipeline from Q6.
+
+Your baseline_latency function will not be very interesting
+as the pipeline does not produce any meaningful output on a single row!
+You may choose to instead run an example with two rows,
+or you may fill in this function in any other way that you choose
+that you think is meaningful.
 """
 
 def baseline_small():
@@ -397,6 +403,8 @@ Then use these to write 3 new pipelines:
     fromvar_medium
     fromvar_large
     fromvar_latency
+
+These pipelines should produce the same answers as in Q8.
 
 As your answer to this part;
 a. Generate a plot in output/q9a.png of the throughputs
@@ -466,6 +474,8 @@ First, we need to set up our pipelines for comparison as before.
 We already have the baseline pipelines from Q8,
 so let's just set up a comparison pipeline
 which uses a for loop to calculate the same statistics.
+
+Your pipeline should produce the same answers as in Q6 and Q8.
 
 Create a new pipeline:
 - Iterate through the dataframe entries. You can assume they are sorted.
