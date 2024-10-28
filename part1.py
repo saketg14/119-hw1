@@ -486,15 +486,16 @@ You will need to load the data from 2019 to get the answer to this part.
 You may choose to do this
 by writing another function like q10_helper and running q11,
 or you may just do it separately
-(e.g., in a Python shell) and return the name of the university
+(e.g., in a Python shell) and return the name of the country/region
 that you found went down in the rankings.
 
 Errata: please note that the 2021 dataset we provided is flawed
 (it is almost identical to the 2020 data).
 This is why the question now asks for the difference between 2019 and 2021.
-Your answer to which university went down will not be graded.
+Your answer to which country/region went down will not be graded.
 
-For the answer to this part return the name of the country that tops the ranking and the name of one country that went down in the rankings.
+For the answer to this part return the name of the country/region that tops the ranking
+and the name of one country/region that went down in the rankings.
 """
 
 def q12a(avg_2021):

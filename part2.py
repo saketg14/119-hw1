@@ -330,6 +330,9 @@ and save a new file.
 
 Make four versions of load input that load your datasets.
 (The _large one should use the full population dataset.)
+Each should return a dataframe.
+
+The input CSV file will have 600 rows, but the DataFrame (after your cleaning) may have less than that.
 """
 
 def load_input_small():
