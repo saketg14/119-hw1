@@ -516,7 +516,7 @@ Comment on why the country above is at the top of the list.
 13a.
 Represent all the attributes in the avg_2021 dataframe using a box and whisker plot.
 
-Store your plot in output/13a.png.
+Store your plot in output/part1-13a.png.
 
 As the answer to this part, return the name of the plot you saved.
 
@@ -529,7 +529,7 @@ def q13a(avg_2021):
     # Plot the box and whisker plot
     # TODO
     raise NotImplementedError
-    # return "output/13a.png"
+    # return "output/part1-13a.png"
 
 """
 b. Do you observe any anomalies in the box and whisker
@@ -545,7 +545,7 @@ plot?
 Pick two attributes in the avg_2021 dataframe
 and represent them using a scatter plot.
 
-Store your plot in output/14a.png.
+Store your plot in output/part1-14a.png.
 
 As the answer to this part, return the name of the plot you saved.
 """
@@ -554,7 +554,7 @@ def q14a(avg_2021):
     # Enter code here
     # TODO
     raise NotImplementedError
-    # return "output/14a.png"
+    # return "output/part1-14a.png"
 
 """
 Do you observe any general trend?
@@ -614,7 +614,7 @@ def q16(top_10):
 17a.
 Draw a suitable plot to show how the overall scores of the Top 10 universities varied over the three years. Clearly label your graph and attach a legend. Explain why you chose the particular plot.
 
-Save your plot in output/17a.png.
+Save your plot in output/part1-17a.png.
 
 As the answer to this part, return the name of the plot you saved.
 
@@ -627,7 +627,7 @@ def q17a(top_10):
     # Enter code here
     # TODO
     raise NotImplementedError
-    # return "output/17a.png"
+    # return "output/part1-17a.png"
 
 """
 17b.
@@ -652,7 +652,7 @@ You can learn more about correlation matrices from here: https://www.statology.o
 18.
 Plot a correlation matrix to see how each variable is correlated to another. You can use the data from 2021.
 
-Print your correlation matrix and save it in output/18.png.
+Print your correlation matrix and save it in output/part1-18.png.
 
 As the answer to this part, return the name of the plot you saved.
 
@@ -663,7 +663,7 @@ def q18(dfs):
     # Enter code here
     # TODO
     raise NotImplementedError
-    # return "output/18.png"
+    # return "output/part1-18.png"
 
 """
 19. Comment on at least one entry in the matrix you obtained in the previous

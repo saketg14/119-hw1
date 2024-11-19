@@ -116,7 +116,7 @@ def q2a():
     # Pipeline names: small, medium, large
     raise NotImplementedError
     # Generate a plot.
-    # Save the plot as 'output/q2a.png'.
+    # Save the plot as 'output/part2-q2a.png'.
     # TODO
     # Finally, return the throughputs as a list.
     # TODO
@@ -207,7 +207,7 @@ def q4a():
     # Add the single pipeline three times.
     raise NotImplementedError
     # Generate a plot.
-    # Save the plot as 'output/q4a.png'.
+    # Save the plot as 'output/part2-q4a.png'.
     # TODO
     # Finally, return the latencies as a list.
     # TODO
@@ -217,9 +217,9 @@ def q4a():
 How much did the latency vary between the three copies of the pipeline?
 Is this more or less than what you expected?
 
-=== ANSWER Q1b BELOW ===
+=== ANSWER Q4b BELOW ===
 
-=== END OF Q1b ANSWER ===
+=== END OF Q4b ANSWER ===
 """
 
 """
@@ -410,10 +410,10 @@ Then use these to write 3 new pipelines:
 These pipelines should produce the same answers as in Q8.
 
 As your answer to this part;
-a. Generate a plot in output/q9a.png of the throughputs
+a. Generate a plot in output/part2-q9a.png of the throughputs
     Return the list of 6 throughputs in this order:
     baseline_small, baseline_medium, baseline_large, fromvar_small, fromvar_medium, fromvar_large
-b. Generate a plot in output/q9b.png of the latencies
+b. Generate a plot in output/part2-q9b.png of the latencies
     Return the list of 2 latencies in this order:
     baseline_latency, fromvar_latency
 """
@@ -527,11 +527,11 @@ def q12():
 Finally, let's compare our two pipelines,
 as we did in Q9.
 
-a. Generate a plot in output/q13a.png of the throughputs
+a. Generate a plot in output/part2-q13a.png of the throughputs
     Return the list of 6 throughputs in this order:
     baseline_small, baseline_medium, baseline_large, for_loop_small, for_loop_medium, for_loop_large
 
-b. Generate a plot in output/q13b.png of the latencies
+b. Generate a plot in output/part2-q13b.png of the latencies
     Return the list of 2 latencies in this order:
     baseline_latency, for_loop_latency
 """
@@ -633,8 +633,8 @@ and
 b. the list of 2 latencies.
 
 and generate plots for each of these in the following files:
-    output/extra_credit_a.png
-    output/extra_credit_b.png
+    output/part2-ec-a.png
+    output/part2-ec-b.png
 """
 
 # Extra credit (optional)

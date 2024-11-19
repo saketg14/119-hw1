@@ -241,9 +241,11 @@ def q6():
 """
 Let's do a performance comparison between the two methods.
 
-This time, no need to generate a plot.
-Just use your ThroughputHelper and LatencyHelper classes
+Use use your ThroughputHelper and LatencyHelper classes
 from part 2 to get answers for both pipelines.
+
+Additionally, generate a plot and save it in
+    output/part3-q7.png
 
 7. Throughput
 """
@@ -262,6 +264,9 @@ For latency, remember that we should create a version of the
 pipeline that processes only a single row! (As in Part 2).
 However, for this question only, it is OK if you choose to run
 latency on the entire pipeline instead.
+
+Additionally, generate a plot and save it in
+    output/part3-q8.png
 """
 
 def q8():
@@ -316,7 +321,7 @@ def PART_3_PIPELINE():
     # 2b: commentary
     log_answer("q3", q3)
     # 4: commentary
-    # 5: extra credit
+    # 5: commentary
     log_answer("q6", q6)
     log_answer("q7", q7)
     log_answer("q8", q8)
