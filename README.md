@@ -1,20 +1,17 @@
 # Homework 1: Data Processing and Performance
 
-**Due date: October 25, 2024** (11:59pm)
+**Due date: Friday, October 17, 2025** (11:59pm)
 
 This homework has three parts.
 
-- The first part (released Monday, Oct 14)
-reviews some of the basics of data processing
+- The first part reviews some of the basics of data processing
 in the context of Pandas
 (input, cleaning, validation, and manipulation of DataFrames).
 
-- The second part (released Wednesday, Oct 16)
-is about performance measuring & comparison, and
+- The second part is about performance measuring & comparison, and
 will explore several design choices which can affect performance.
 
-- Finally, the third part (released Friday, Oct 18)
-is a shorter part about programming in the shell,
+- Finally, the third part is a shorter part about programming in the shell,
 and its relevance to data processing.
 
 ## Getting Started
@@ -55,6 +52,5 @@ Here are some things to consider: are your variable names chosen appropriately? 
 
 ## Credits
 
-Many thanks to Hassnain (the TA)
-and the data science course at LUMS (CS 334 taught by Dr. Mobin Javed)
+Many thanks to the data science course at LUMS (CS 334 taught by Dr. Mobin Javed)
 for the data and some of the exercises that were used in Part 1 of this homework assignment.

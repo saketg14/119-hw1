@@ -1,8 +1,6 @@
 """
 Part 2: Performance Comparisons
 
-**Released: Wednesday, October 16**
-
 In this part, we will explore comparing the performance
 of different pipelines.
 First, we will set up some helper classes.

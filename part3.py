@@ -1,8 +1,6 @@
 """
 Part 3: Short Exercises on the Shell
 
-**Released: Friday, October 18**
-
 For the third and last part of this homework,
 we will complete a few tasks related to shell programming
 and shell commands, particularly, with relevance to how

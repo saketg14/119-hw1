@@ -1,8 +1,6 @@
 """
 Part 1: Data Processing in Pandas
 
-**Released: Monday, October 14**
-
 === Instructions ===
 
 There are 22 questions in this part.
