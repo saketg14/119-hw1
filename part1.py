@@ -490,7 +490,6 @@ that you found went down in the rankings.
 Errata: please note that the 2021 dataset we provided is flawed
 (it is almost identical to the 2020 data).
 This is why the question now asks for the difference between 2019 and 2021.
-Your answer to which country/region went down will not be graded.
 
 For the answer to this part return the name of the country/region that tops the ranking
 and the name of one country/region that went down in the rankings.
@@ -631,7 +630,7 @@ def q17a(top_10):
 17b.
 What do you observe from the plot above? Which university has remained consistent in their scores? Which have increased/decreased over the years?
 
-=== ANSWER Q17a BELOW ===
+=== ANSWER Q17b BELOW ===
 
 === END OF Q17b ANSWER ===
 """
