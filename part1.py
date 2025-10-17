@@ -121,24 +121,23 @@ As your answer to q2, return True if all validation checks pass,
 and False otherwise.
 """
 
+
 def q2(dfs):
-    """
-    Input: Assume the input is provided by load_input()
+    # Get shapes of all dataframes
+    shapes = [df.shape for df in dfs]
+    print(shapes)
+    
+    # Check if all shapes are the same
+    if len(set(shapes)) != 1:
+        return False
+    
+    # Check columns are in correct order
+    columns = [tuple(list(df.columns)) for df in dfs]
+    if len(set(columns)) != 1:
+        return False
+    
+    return True
 
-    Return: True if all validation checks pass, False otherwise.
-
-    Make sure you return a Boolean!
-    From this part onward, we will not provide the return
-    statement for you.
-    You can check that the "answers" to each part look
-    correct by inspecting the file part1-answers.txt.
-    """
-    # Check:
-    # - that all three dataframes have the same shape
-    # - the number of rows
-    # - the number of columns
-    # - the columns are listed in the correct order
-    raise NotImplementedError
 
 """
 ===== Interlude: Checking your output so far =====
