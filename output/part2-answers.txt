@@ -1,0 +1,18 @@
+q1,bar
+q2a,[23967451.42857143, 41257342.96000472, 45422600.12780651]
+q3,1
+q4a,[0.00045299530029296875, 0.00030994415283203125, 0.0003337860107421875]
+q5a,Error: [Errno 2] No such file or directory: 'data/2021_falsified.csv'
+q5b,Error: [Errno 2] No such file or directory: 'data/2021_falsified.csv'
+q6,Error: 'code'
+q7,Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+q8,Error: [Errno 2] No such file or directory: 'data/population-medium.csv'
+q9a,Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+q9b,Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+q11,Error: 'code'
+q12,Error: [Errno 2] No such file or directory: 'data/population-medium.csv'
+q13a,Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+q13b,Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+extra credit (a),Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+extra credit (b),Error: [Errno 2] No such file or directory: 'data/population-small.csv'
+PART 2,13

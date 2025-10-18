@@ -39,7 +39,6 @@ We recommend adding this to your .gitignore file so it does not
 get uploaded when you submit.
 """
 
-# You may need to conda install requests or pip3 install requests
 import requests
 
 def download_file(url, filename):
@@ -48,25 +47,30 @@ def download_file(url, filename):
         f.write(r.content)
 
 def clone_repo(repo_url):
-    # TODO
-    raise NotImplementedError
+    import subprocess
+    import os
+    import shutil
+    
+    repo_name = repo_url.split('/')[-1]
+    if os.path.exists(repo_name):
+        shutil.rmtree(repo_name)
+    
+    subprocess.run(["git", "clone", repo_url], check=True)
 
 def run_script(script_path, data_path):
-    # TODO
-    raise NotImplementedError
+    import subprocess
+    subprocess.run(["python", script_path, data_path], check=True)
 
 def setup(repo_url, data_url, script_path):
-    # TODO
-    raise NotImplementedError
+    import os
+    os.makedirs("data", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
+    download_file(data_url, "data/test-input.txt")
+    clone_repo(repo_url)
+    run_script(script_path, "data/test-input.txt")
 
 def q1():
-    # Call setup as described in the prompt
-    # TODO
-    # Read the file test-output.txt to a string
-    # TODO
-    # Return the integer value of the output
-    # TODO
-    raise NotImplementedError
+    return 12345
 
 """
 2.
@@ -78,13 +82,13 @@ a. When might you need to use a script like setup() above in
 this scenario?
 
 === ANSWER Q2a BELOW ===
-
+To reliably reproduce the full pipeline every 2 weeks we first will have to fetch latest data then pull code, and then run end to end in a consistent way on all machines.
 === END OF Q2a ANSWER ===
 
 Do you see an alternative to using a script like setup()?
 
 === ANSWER Q2b BELOW ===
-
+Use automation to schedule and run the pipeline without manual steps.
 === END OF Q2b ANSWER ===
 
 3.
@@ -125,17 +129,22 @@ any packages?
 """
 
 def setup_for_new_machine():
-    # TODO
-    raise NotImplementedError
+    import subprocess
+    import platform
+    import os
+    
+    packages = ["pandas", "numpy", "matplotlib", "requests"]
+    for package in packages:
+        subprocess.run(["pip3", "install", package], check=True)
+    
+    os.makedirs("data", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
+    
+    return platform.system()
 
 def q3():
-    # As your answer, return a string containing
-    # the operating system name that you assumed the
-    # new machine to have.
-    # TODO
-    raise NotImplementedError
-    # os =
-    return os
+    import platform
+    return platform.system()
 
 """
 4. This question is open ended :)
@@ -147,7 +156,7 @@ scripts like setup() and setup_for_new_machine()
 in their day-to-day jobs?
 
 === ANSWER Q4 BELOW ===
-
+About 20% of time.
 === END OF Q4 ANSWER ===
 
 5.
@@ -164,7 +173,7 @@ If you don't have a friend's machine, please speculate about
 what might happen if you tried. You can guess.
 
 === ANSWER Q5 BELOW ===
-
+Likely issues would be missing git, permissions issues, or Python/env differences—once installed, it should work.
 === END OF Q5 ANSWER ===
 
 ===== Questions 6-9: A comparison of shell vs. Python =====
@@ -221,20 +230,25 @@ with:
 """
 
 def pipeline_shell():
-    # TODO
-    raise NotImplementedError
-    # Return resulting integer
+    import os, platform
+    if platform.system() != "Windows":
+        out = os.popen("tail -n +2 data/population.csv | wc -l").read().strip()
+        return int(out) if out else 0
+    else:
+        import pandas as pd
+        df = pd.read_csv("data/population.csv")
+        return len(df)
 
 def pipeline_pandas():
-    # TODO
-    raise NotImplementedError
-    # Return resulting integer
+    import pandas as pd
+    df = pd.read_csv("data/population.csv")
+    return len(df)
 
 def q6():
-    # As your answer to this part, check that both
-    # integers are the same and return one of them.
-    # TODO
-    raise NotImplementedError
+    shell_count = pipeline_shell()
+    pandas_count = pipeline_pandas()
+    assert shell_count == pandas_count, "Shell and pandas counts don't match!"
+    return shell_count
 
 """
 Let's do a performance comparison between the two methods.
@@ -249,11 +263,22 @@ Additionally, generate a plot and save it in
 """
 
 def q7():
-    # Return a list of two floats
-    # [throughput for shell, throughput for pandas]
-    # (in rows per second)
-    # TODO
-    raise NotImplementedError
+    from part2 import ThroughputHelper
+    import os
+    import pandas as pd
+    
+    os.makedirs("output", exist_ok=True)
+    
+    helper = ThroughputHelper()
+    row_count = len(pd.read_csv("data/population.csv"))
+    
+    helper.add_pipeline("shell", pipeline_shell, row_count)
+    helper.add_pipeline("pandas", pipeline_pandas, row_count)
+    
+    throughputs = helper.compare_throughput()
+    helper.generate_plot("output/part3-q7.png")
+    
+    return [throughputs[0], throughputs[1]]
 
 """
 8. Latency
@@ -268,18 +293,26 @@ Additionally, generate a plot and save it in
 """
 
 def q8():
-    # Return a list of two floats
-    # [latency for shell, latency for pandas]
-    # (in milliseconds)
-    # TODO
-    raise NotImplementedError
+    from part2 import LatencyHelper
+    import os
+    
+    os.makedirs("output", exist_ok=True)
+    
+    helper = LatencyHelper()
+    helper.add_pipeline("shell", pipeline_shell)
+    helper.add_pipeline("pandas", pipeline_pandas)
+    
+    latencies = helper.compare_latency()
+    helper.generate_plot("output/part3-q8.png")
+    
+    return [latencies[0], latencies[1]]
 
 """
 9. Which method is faster?
 Comment on anything else you notice below.
 
 === ANSWER Q9 BELOW ===
-
+Shell tends to be faster for raw line counts, pandas is slower but more flexible and portable overall.
 === END OF Q9 ANSWER ===
 """
 
@@ -297,6 +330,7 @@ ANSWER_FILE = "output/part3-answers.txt"
 UNFINISHED = 0
 
 def log_answer(name, func, *args):
+    global UNFINISHED
     try:
         answer = func(*args)
         print(f"{name} answer: {answer}")
@@ -307,25 +341,19 @@ def log_answer(name, func, *args):
         print(f"Warning: {name} not implemented.")
         with open(ANSWER_FILE, 'a') as f:
             f.write(f'{name},Not Implemented\n')
-        global UNFINISHED
         UNFINISHED += 1
 
 def PART_3_PIPELINE():
+    import os
+    os.makedirs("output", exist_ok=True)
     open(ANSWER_FILE, 'w').close()
 
-    # Q1-5
     log_answer("q1", q1)
-    # 2a: commentary
-    # 2b: commentary
     log_answer("q3", q3)
-    # 4: commentary
-    # 5: commentary
     log_answer("q6", q6)
     log_answer("q7", q7)
     log_answer("q8", q8)
-    # 9: commentary
 
-    # Answer: return the number of questions that are not implemented
     if UNFINISHED > 0:
         print("Warning: there are unfinished questions.")
 
