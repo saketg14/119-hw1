@@ -1,7 +1,7 @@
 q1,3
 q2,True
 q3a,False
-q4,["King's College London", 'University of California, San Diego (UCSD)', 'University of Glasgow', 'Durham University', 'Pennsylvania State University']
+q4,['Peking University', 'The University of Manchester', 'Princeton University', 'University of British Columbia', 'The Australian National University']
 q5a,[100, 100, 100, 100, 100, 100, 100, 100]
 q5b,[100, 100, 100, 100, 100, 100, 100, 100]
 q5c,100
